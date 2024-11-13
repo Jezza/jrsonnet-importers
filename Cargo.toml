@@ -1,0 +1,18 @@
+[package]
+name = "jrsonnet-importers"
+version = "0.2.0"
+edition = "2021"
+description = "More importers for jrsonnet"
+license = "MIT"
+repository = "https://github.com/Jezza/jrsonnet-importers"
+
+[features]
+default = []
+rust-embed = ["dep:rust-embed"]
+
+[dependencies]
+jrsonnet-gcmodule = "0.3.7"
+jrsonnet-parser = "0.5.0-pre95"
+jrsonnet-evaluator = "0.5.0-pre95"
+
+rust-embed = { version = "8.5.0", optional = true }
