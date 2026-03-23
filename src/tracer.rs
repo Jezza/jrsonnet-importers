@@ -27,7 +27,10 @@ impl<T: jrsonnet_gcmodule::Trace> jrsonnet_gcmodule::Trace for CargoTracer<T> {
     }
 }
 
-impl<T: jrsonnet_evaluator::ImportResolver> jrsonnet_evaluator::ImportResolver for CargoTracer<T> {
+impl<T> jrsonnet_evaluator::ImportResolver for CargoTracer<T>
+where
+    T: jrsonnet_evaluator::ImportResolver + jrsonnet_gcmodule::Trace,
+{
     fn resolve_from(
         &self,
         from: &SourcePath,

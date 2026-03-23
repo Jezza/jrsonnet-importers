@@ -8,6 +8,12 @@ pub use tracer::CargoTracer;
 mod from_fn;
 mod tracer;
 
+#[cfg(feature = "input")]
+mod input;
+
+#[cfg(feature = "input")]
+pub use input::{state, eval_file, eval_file_as, eval_str, eval_str_as};
+
 #[cfg(feature = "rust-embed")]
 mod embedded;
 
