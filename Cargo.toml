@@ -1,21 +1,23 @@
 [package]
 name = "jrsonnet-importers"
-version = "0.3.0"
+version = "0.3.1"
 edition = "2021"
 description = "More importers for jrsonnet"
 license = "MIT"
 repository = "https://github.com/Jezza/jrsonnet-importers"
 
 [features]
-default = []
-rust-embed = ["dep:rust-embed"]
-input = ["dep:anyhow", "dep:serde", "dep:serde_json"]
+default            = []
+rust-embed         = ["dep:rust-embed"]
+input              = ["dep:anyhow", "dep:serde", "dep:serde_json"]
+exp-preserve-order = ["input", "jrsonnet-evaluator/exp-preserve-order", "jrsonnet-stdlib/exp-preserve-order", ]
+exp-destruct       = ["input", "jrsonnet-evaluator/exp-destruct", ]
 
 [dependencies]
 jrsonnet-gcmodule  = "=0.3.7"
 jrsonnet-parser    = { version = "=0.5.0-pre95" }
-jrsonnet-evaluator = { version = "=0.5.0-pre95", features = ["exp-preserve-order"] }
-jrsonnet-stdlib    = { version = "=0.5.0-pre95", features = ["exp-preserve-order"] }
+jrsonnet-evaluator = { version = "=0.5.0-pre95" }
+jrsonnet-stdlib    = { version = "=0.5.0-pre95" }
 jrsonnet-macros    = { version = "=0.5.0-pre95" }
 jrsonnet-types     = { version = "=0.5.0-pre95" }
 
